@@ -40,6 +40,7 @@ private:
     QSvgWidget * m_hour_hand;
     QSvgWidget * m_clock_face;
     QPoint m_clickOffset;
+    bool m_show_second_hand;
 };
 
 

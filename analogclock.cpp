@@ -120,6 +120,9 @@ void AnalogClock::readSettings()
     QString preview_file = s.value("preview", "preview.svg").toString();
     s.setValue("preview", preview_file);
 
+    m_show_second_hand = s.value("show_second_hand", true).toBool();
+    s.setValue("show_second_hand", m_show_second_hand);
+
     m_clock_face = new QSvgWidget(svg_path + clock_face_file, 0);
     m_second_hand = new QSvgWidget(svg_path + second_hand_file, 0);
     m_minute_hand = new QSvgWidget(svg_path + minute_hand_file, 0);
@@ -158,11 +161,13 @@ void AnalogClock::paintEvent(QPaintEvent *)
     m_minute_hand->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
     painter.restore();
 
-    painter.save();
-    painter.translate(width() / 2, height() / 2);
-    painter.rotate(6.0 *time.second());
-    painter.translate(-width() / 2, -height() / 2);
-    m_second_hand->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
-    painter.restore();
+    if(m_show_second_hand){
+        painter.save();
+        painter.translate(width() / 2, height() / 2);
+        painter.rotate(6.0 *time.second());
+        painter.translate(-width() / 2, -height() / 2);
+        m_second_hand->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
+        painter.restore();
+    }
 }
 
