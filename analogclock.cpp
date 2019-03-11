@@ -22,6 +22,7 @@ AnalogClock::AnalogClock(QWidget *parent)
     resize(200, 200); // will get overridden by readSettings
 
     readSettings();
+    m_tempHide = false;
 }
 
 void AnalogClock::resizeEvent(QResizeEvent *event)
@@ -35,13 +36,22 @@ void AnalogClock::resizeEvent(QResizeEvent *event)
 
 void AnalogClock::closeEvent(QCloseEvent *event)
 {
+    qDebug() << Q_FUNC_INFO;
     QObject::disconnect(m_timer);
     writeSettings();
+    qApp->quit();
 }
 
 void AnalogClock::hideEvent(QHideEvent *event)
 {
-    QWidget::hideEvent(event);
+    if(!m_tempHide){
+        event->ignore();
+        this->close();
+    }
+    else{
+        QWidget::hideEvent(event);
+        m_tempHide = false;
+    }
 }
 
 void AnalogClock::showEvent(QShowEvent *event)
@@ -63,6 +73,7 @@ void AnalogClock::mouseMoveEvent(QMouseEvent *e)
 
 void AnalogClock::mouseDoubleClickEvent(QMouseEvent *e)
 {
+    m_tempHide = true;
     bool has_frame = !(this->windowFlags() & Qt::FramelessWindowHint);
     if(has_frame){
         this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);

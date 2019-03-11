@@ -41,6 +41,7 @@ private:
     QSvgWidget * m_clock_face;
     QPoint m_clickOffset;
     bool m_show_second_hand;
+    bool m_tempHide;
 };
 
 
