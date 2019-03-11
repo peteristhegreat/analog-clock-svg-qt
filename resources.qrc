@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/face.svg</file>
+        <file>img/hour_hand.svg</file>
+        <file>img/minute_hand.svg</file>
+        <file>img/preview.svg</file>
+        <file>img/second_hand.svg</file>
+        <file>img/face_with_shadow.svg</file>
+    </qresource>
+</RCC>
