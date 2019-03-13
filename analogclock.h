@@ -10,6 +10,8 @@
 #include <QTimer>
 #include <QHideEvent>
 #include <QShowEvent>
+#include <QPointF>
+#include <QMoveEvent>
 
 class AnalogClock : public QWidget
 {
@@ -29,10 +31,14 @@ protected:
     void mouseDoubleClickEvent(QMouseEvent * e);
     void mousePressEvent(QMouseEvent * e);
     void mouseReleaseEvent(QMouseEvent * e);
+    void moveEvent(QMoveEvent *event);
 //    int heightForWidth ( int w ) const;
 public slots:
     void readSettings();
     void writeSettings();
+    void ensureOnScreen();
+    void handleScreenDisconnect(QScreen *);
+    void onScreenResize(QRect);
 private:
     QTimer * m_timer;
     QSvgWidget * m_second_hand;
@@ -42,6 +48,7 @@ private:
     QPoint m_clickOffset;
     bool m_show_second_hand;
     bool m_tempHide;
+    QPointF m_screenPercent;
 };
 
 

@@ -4,6 +4,11 @@
 #include <QMenu>
 #include <QApplication>
 #include <QDebug>
+#include <QtMath>
+#include <QEvent>
+#include <QScreen>
+#include <QGuiApplication>
+#include <QDesktopWidget>
 
 AnalogClock::AnalogClock(QWidget *parent)
     : QWidget(parent)
@@ -11,9 +16,6 @@ AnalogClock::AnalogClock(QWidget *parent)
     m_timer = new QTimer(this);
     this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint);
     setAttribute(Qt::WA_TranslucentBackground);
-
-    // TODO: Maintain aspect ratio to be a square
-    setStyleSheet("background-color: rgba(0,0,0,0)");
 
     connect(m_timer, SIGNAL(timeout()), this, SLOT(update()));
     m_timer->start(1000);
@@ -23,20 +25,58 @@ AnalogClock::AnalogClock(QWidget *parent)
 
     readSettings();
     m_tempHide = false;
+
+    QObject::connect(qApp, SIGNAL(screenRemoved(QScreen *)), this, SLOT(handleScreenDisconnect(QScreen *)));
+    ensureOnScreen();
+}
+
+void AnalogClock::ensureOnScreen(){
+    static int screenId = -2;
+    // Get current screen id for our widget
+    int newScreenId = qMax(qApp->desktop()->screenNumber(this), 0);
+    if(qApp->screens().length() > 0){
+
+        QScreen * screen = qApp->screens().at(newScreenId);
+        if(newScreenId != screenId){
+            screenId = newScreenId;
+            QObject::connect(screen, SIGNAL(geometryChanged(QRect)), this, SLOT(onScreenResize(QRect)));
+        }
+
+        if(!screen->availableGeometry().contains(this->geometry(), true)){
+            this->move(screen->geometry().left() + m_screenPercent.x()*screen->geometry().width(),
+                       screen->geometry().top() + m_screenPercent.y()*screen->geometry().height());
+        }
+    }
+}
+
+void AnalogClock::handleScreenDisconnect(QScreen * s)
+{
+    QObject::disconnect(s, SIGNAL(geometryChanged(QRect)), this, SLOT(onScreenResize(QRect)));
+    if(qApp->screens().length() > 0)
+    {
+        QScreen * screen = qApp->screens().at(qMax(qApp->desktop()->screenNumber(this),0));
+        this->move(screen->geometry().left() + m_screenPercent.x()*screen->geometry().width(),
+                   screen->geometry().top() + m_screenPercent.y()*screen->geometry().height());
+    }
+}
+
+void AnalogClock::onScreenResize(QRect)
+{
+    this->ensureOnScreen();
 }
 
 void AnalogClock::resizeEvent(QResizeEvent *event)
 {
-    m_clock_face->resize(event->size());
-    m_second_hand->resize(event->size());
-    m_minute_hand->resize(event->size());
-    m_hour_hand->resize(event->size());
+    int side = qMin(event->size().width(), event->size().height());
+    m_clock_face->resize(side, side);
+    m_second_hand->resize(side, side);
+    m_minute_hand->resize(side, side);
+    m_hour_hand->resize(side, side);
     event->accept();
 }
 
 void AnalogClock::closeEvent(QCloseEvent *event)
 {
-    qDebug() << Q_FUNC_INFO;
     QObject::disconnect(m_timer);
     writeSettings();
     qApp->quit();
@@ -110,6 +150,13 @@ void AnalogClock::mouseReleaseEvent(QMouseEvent * e)
     }
 }
 
+void AnalogClock::moveEvent(QMoveEvent *event)
+{
+    QScreen * screen = qApp->screens().at(qApp->desktop()->screenNumber(this));
+    m_screenPercent = QPointF((qreal)(event->pos().x() - screen->geometry().left())/screen->geometry().width(),
+                              (qreal)(event->pos().y() - screen->geometry().top())/screen->geometry().height());
+}
+
 void AnalogClock::readSettings()
 {
     QSettings s;
@@ -134,6 +181,8 @@ void AnalogClock::readSettings()
     m_show_second_hand = s.value("show_second_hand", true).toBool();
     s.setValue("show_second_hand", m_show_second_hand);
 
+    m_screenPercent = s.value("screen_percent", QPointF(0.5, 0.5)).toPointF();
+
     m_clock_face = new QSvgWidget(svg_path + clock_face_file, 0);
     m_second_hand = new QSvgWidget(svg_path + second_hand_file, 0);
     m_minute_hand = new QSvgWidget(svg_path + minute_hand_file, 0);
@@ -146,8 +195,12 @@ void AnalogClock::writeSettings()
 {
     QSettings s;
     s.setValue("window_geometry", this->saveGeometry());
+    s.setValue("screen_percent", m_screenPercent);
 }
 
+qreal degToRad(qreal deg){
+    return M_PI * deg / 180;
+}
 
 void AnalogClock::paintEvent(QPaintEvent *)
 {
@@ -155,28 +208,39 @@ void AnalogClock::paintEvent(QPaintEvent *)
     QTime time = QTime::currentTime();
     QPainter painter(this);
 
+    // Draw the clock face
     painter.setBrush(Qt::transparent);
     painter.fillRect(this->rect(), QBrush(Qt::transparent));
     painter.setRenderHint(QPainter::Antialiasing);
+    painter.translate((width() - side)/2, (height() - side)/2);
     m_clock_face->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
     painter.save();
-    painter.translate(width() / 2, height() / 2);
+
+    // Draw the hour hand
+    painter.translate(m_hour_hand->width() / 2, m_hour_hand->height() / 2);
     painter.rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
-    painter.translate(-width() / 2, -height() / 2);
+
+    painter.translate(-m_hour_hand->width() / 2, -m_hour_hand->height() / 2);
     m_hour_hand->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
     painter.restore();
     painter.save();
-    painter.translate(width() / 2, height() / 2);
+
+    // Draw the minute hand
+    painter.translate(m_minute_hand->width() / 2, m_minute_hand->height() / 2);
     painter.rotate(6.0 * (time.minute() + time.second() / 60.0));
-    painter.translate(-width() / 2, -height() / 2);
+    painter.translate(-m_minute_hand->width() / 2, -m_minute_hand->height() / 2);
     m_minute_hand->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
     painter.restore();
 
+//    qreal aspect_ratio = (qreal)this->height()/this->width()*qAbs(qCos(degToRad(90 - 6*time.second())));
     if(m_show_second_hand){
+        // Draw the second hand
         painter.save();
-        painter.translate(width() / 2, height() / 2);
+        painter.translate(m_second_hand->width() / 2, m_second_hand->height() / 2);
         painter.rotate(6.0 *time.second());
-        painter.translate(-width() / 2, -height() / 2);
+//        painter.scale(1, 1 + 2*aspect_ratio);
+//        painter.scale(qCos(degToRad(6.0*time.second())), qSin(degToRad(6.0*time.second())));
+        painter.translate(-m_second_hand->width() / 2, -m_second_hand->height() / 2);
         m_second_hand->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
         painter.restore();
     }
