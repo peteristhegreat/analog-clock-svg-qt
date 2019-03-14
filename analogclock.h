@@ -39,6 +39,9 @@ public slots:
     void ensureOnScreen();
     void handleScreenDisconnect(QScreen *);
     void onScreenResize(QRect);
+    void toggleFrame();
+    void setFrame(bool add_frame);
+    void showContextMenu(const QPoint &pos);
 private:
     QTimer * m_timer;
     QSvgWidget * m_second_hand;

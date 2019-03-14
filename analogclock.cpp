@@ -14,8 +14,12 @@ AnalogClock::AnalogClock(QWidget *parent)
     : QWidget(parent)
 {
     m_timer = new QTimer(this);
-    this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint);
-    setAttribute(Qt::WA_TranslucentBackground);
+    this->setFrame(false);
+    this->setContextMenuPolicy(Qt::CustomContextMenu);
+
+
+    QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint &)),
+            this, SLOT(showContextMenu(const QPoint &)));
 
     connect(m_timer, SIGNAL(timeout()), this, SLOT(update()));
     m_timer->start(1000);
@@ -99,10 +103,21 @@ void AnalogClock::showEvent(QShowEvent *event)
     QWidget::showEvent(event);
 }
 
+void AnalogClock::showContextMenu(const QPoint &pos)
+{
+   QMenu contextMenu(this->windowTitle(), this);
+
+//   QAction toggleFrameAction("Toggle Frame", this);
+//   connect(&toggleFrameAction, SIGNAL(triggered()), this, SLOT(toggleFrame());
+//   contextMenu.addAction(&toggleFrameAction);
+   contextMenu.addAction("Toggle Frame", this, SLOT(toggleFrame()));
+
+   contextMenu.exec(mapToGlobal(pos));
+}
+
 void AnalogClock::contextMenuEvent(QContextMenuEvent *e)
 {
-    QMenu menu;
-    menu.popup(e->pos());
+    QWidget::contextMenuEvent(e);
 }
 
 void AnalogClock::mouseMoveEvent(QMouseEvent *e)
@@ -113,17 +128,24 @@ void AnalogClock::mouseMoveEvent(QMouseEvent *e)
 
 void AnalogClock::mouseDoubleClickEvent(QMouseEvent *e)
 {
+    this->toggleFrame();
+}
+
+void AnalogClock::toggleFrame(){
     m_tempHide = true;
     bool has_frame = !(this->windowFlags() & Qt::FramelessWindowHint);
-    if(has_frame){
-        this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
-        this->setAttribute(Qt::WA_TranslucentBackground);
-        this->show();
+    this->setFrame(!has_frame);
+    this->show();
+}
+
+void AnalogClock::setFrame(bool add_frame){
+    if(add_frame){
+        this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint);
+    //        this->setAttribute(Qt::WA_TranslucentBackground, false);
     }
     else{
-        this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint);
-        this->setAttribute(Qt::WA_TranslucentBackground, false);
-        this->show();
+        this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
+        this->setAttribute(Qt::WA_TranslucentBackground);
     }
 }
 
