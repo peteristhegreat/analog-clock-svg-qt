@@ -152,7 +152,14 @@ void AnalogClock::mouseDoubleClickEvent(QMouseEvent *e)
 void AnalogClock::toggleFrame(){
     m_tempHide = true;
     bool has_frame = !(this->windowFlags() & Qt::FramelessWindowHint);
+    QRect geo = this->geometry();
+    QRect fgeo = this->frameGeometry();
     this->setFrame(!has_frame);
+    if(!has_frame){
+        this->setGeometry(fgeo);
+    } else {
+        this->setGeometry(geo);
+    }
     this->show();
 }
 
