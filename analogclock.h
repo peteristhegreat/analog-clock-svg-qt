@@ -16,9 +16,15 @@
 class AnalogClock : public QWidget
 {
     Q_OBJECT
+    Q_PROPERTY(bool showSecondHand READ showSecondHand WRITE setShowSecondHand NOTIFY showSecondHandChanged)
 
 public:
     AnalogClock(QWidget *parent = 0);
+
+    bool showSecondHand() const
+    {
+        return m_showSecondHand;
+    }
 
 protected:
     void paintEvent(QPaintEvent * event) Q_DECL_OVERRIDE;
@@ -42,6 +48,19 @@ public slots:
     void toggleFrame();
     void setFrame(bool add_frame);
     void showContextMenu(const QPoint &pos);
+    void showAboutDialogue();
+    void setShowSecondHand(bool showSecondHand)
+    {
+        if (m_showSecondHand == showSecondHand)
+            return;
+
+        m_showSecondHand = showSecondHand;
+        emit showSecondHandChanged(showSecondHand);
+    }
+
+signals:
+    void showSecondHandChanged(bool showSecondHand);
+
 private:
     QTimer * m_timer;
     QSvgWidget * m_second_hand;
@@ -49,9 +68,9 @@ private:
     QSvgWidget * m_hour_hand;
     QSvgWidget * m_clock_face;
     QPoint m_clickOffset;
-    bool m_show_second_hand;
     bool m_tempHide;
     QPointF m_screenPercent;
+    bool m_showSecondHand;
 };
 
 

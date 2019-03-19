@@ -31,6 +31,7 @@ AnalogClock::AnalogClock(QWidget *parent)
     m_tempHide = false;
 
     QObject::connect(qApp, SIGNAL(screenRemoved(QScreen *)), this, SLOT(handleScreenDisconnect(QScreen *)));
+    QObject::connect(this, SIGNAL(showSecondHandChanged(bool)), this, SLOT(update()));
     ensureOnScreen();
 }
 
@@ -112,7 +113,24 @@ void AnalogClock::showContextMenu(const QPoint &pos)
 //   contextMenu.addAction(&toggleFrameAction);
    contextMenu.addAction("Toggle Frame", this, SLOT(toggleFrame()));
 
+   QAction toggleSecondHand("Second Hand", this);
+   toggleSecondHand.setCheckable(true);
+   toggleSecondHand.setChecked(m_showSecondHand);
+   QObject::connect(&toggleSecondHand, SIGNAL(triggered(bool)), this, SLOT(setShowSecondHand(bool)));
+
+   contextMenu.addAction(&toggleSecondHand);
+   contextMenu.addAction("About", this, SLOT(showAboutDialogue()));
+   contextMenu.addAction("Close", this, SLOT(close()));
+
    contextMenu.exec(mapToGlobal(pos));
+}
+
+void AnalogClock::showAboutDialogue()
+{
+    QMessageBox::about(this, "About " + this->windowTitle(),
+                       "Designed by Peter and Harry with Qt.<br/><br/>"
+                       "<a href=\"https://github.com/peteristhegreat/analog-clock-svg-qt\">"
+                       "github.com/peteristhegreat/analog-clock-svg-qt</a>");
 }
 
 void AnalogClock::contextMenuEvent(QContextMenuEvent *e)
@@ -200,8 +218,8 @@ void AnalogClock::readSettings()
     QString preview_file = s.value("preview", "preview.svg").toString();
     s.setValue("preview", preview_file);
 
-    m_show_second_hand = s.value("show_second_hand", true).toBool();
-    s.setValue("show_second_hand", m_show_second_hand);
+    m_showSecondHand = s.value("show_second_hand", true).toBool();
+    s.setValue("show_second_hand", m_showSecondHand);
 
     m_screenPercent = s.value("screen_percent", QPointF(0.5, 0.5)).toPointF();
 
@@ -218,6 +236,7 @@ void AnalogClock::writeSettings()
     QSettings s;
     s.setValue("window_geometry", this->saveGeometry());
     s.setValue("screen_percent", m_screenPercent);
+    s.setValue("show_second_hand", m_showSecondHand);
 }
 
 qreal degToRad(qreal deg){
@@ -255,7 +274,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     painter.restore();
 
 //    qreal aspect_ratio = (qreal)this->height()/this->width()*qAbs(qCos(degToRad(90 - 6*time.second())));
-    if(m_show_second_hand){
+    if(m_showSecondHand){
         // Draw the second hand
         painter.save();
         painter.translate(m_second_hand->width() / 2, m_second_hand->height() / 2);
