@@ -12,6 +12,7 @@
 #include <QShowEvent>
 #include <QPointF>
 #include <QMoveEvent>
+#include <QGraphicsOpacityEffect>
 
 class AnalogClock : public QWidget
 {
@@ -57,6 +58,7 @@ public slots:
         m_showSecondHand = showSecondHand;
         emit showSecondHandChanged(showSecondHand);
     }
+    void setOpacityFromMenu();
 
 signals:
     void showSecondHandChanged(bool showSecondHand);
@@ -71,6 +73,8 @@ private:
     bool m_tempHide;
     QPointF m_screenPercent;
     bool m_showSecondHand;
+    bool m_isDragging;
+    QGraphicsOpacityEffect * m_opacityEffect;
 };
 
 

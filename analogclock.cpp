@@ -15,7 +15,11 @@ AnalogClock::AnalogClock(QWidget *parent)
 {
     m_timer = new QTimer(this);
     this->setFrame(false);
+    m_isDragging = false;
     this->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    m_opacityEffect = new QGraphicsOpacityEffect(this);
+    this->setGraphicsEffect(m_opacityEffect);
 
 
     QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint &)),
@@ -119,6 +123,13 @@ void AnalogClock::showContextMenu(const QPoint &pos)
    QObject::connect(&toggleSecondHand, SIGNAL(triggered(bool)), this, SLOT(setShowSecondHand(bool)));
 
    contextMenu.addAction(&toggleSecondHand);
+
+   QMenu opacityMenu("Opacity", &contextMenu);
+   for(int i = 100; i > 0; i-=10){
+       opacityMenu.addAction(QString::number(i) + "%", this, SLOT(setOpacityFromMenu()));
+   }
+
+   contextMenu.addMenu(&opacityMenu);
    contextMenu.addAction("About", this, SLOT(showAboutDialogue()));
    contextMenu.addAction("Close", this, SLOT(close()));
 
@@ -133,6 +144,17 @@ void AnalogClock::showAboutDialogue()
                        "github.com/peteristhegreat/analog-clock-svg-qt</a>");
 }
 
+void AnalogClock::setOpacityFromMenu()
+{
+    qDebug() << QObject::sender();
+    QAction * a = qobject_cast<QAction*>(QObject::sender());
+    if(a){
+//        qDebug() << a->text();
+        QString percentString = a->text().split("%").first();
+        m_opacityEffect->setOpacity((qreal)percentString.toInt()/100.);
+    }
+}
+
 void AnalogClock::contextMenuEvent(QContextMenuEvent *e)
 {
     QWidget::contextMenuEvent(e);
@@ -140,8 +162,10 @@ void AnalogClock::contextMenuEvent(QContextMenuEvent *e)
 
 void AnalogClock::mouseMoveEvent(QMouseEvent *e)
 {
-    QPoint diff = e->pos() - m_clickOffset;
-    this->move(this->pos() + diff);
+    if(m_isDragging){
+        QPoint diff = e->pos() - m_clickOffset;
+        this->move(this->pos() + diff);
+    }
 }
 
 void AnalogClock::mouseDoubleClickEvent(QMouseEvent *e)
@@ -177,6 +201,7 @@ void AnalogClock::setFrame(bool add_frame){
 void AnalogClock::mousePressEvent(QMouseEvent * e)
 {
     if(e->button() == Qt::LeftButton){
+        m_isDragging = true;
         this->setCursor(Qt::SizeAllCursor);
         m_clickOffset = e->pos();
     }
@@ -190,6 +215,7 @@ void AnalogClock::mouseReleaseEvent(QMouseEvent * e)
 {
     if(e->button() == Qt::LeftButton){
         this->unsetCursor();
+        m_isDragging = false;
     }
     else
     {
@@ -228,6 +254,9 @@ void AnalogClock::readSettings()
     m_showSecondHand = s.value("show_second_hand", true).toBool();
     s.setValue("show_second_hand", m_showSecondHand);
 
+    m_opacityEffect->setOpacity(s.value("opacity", 1.0).toReal());
+    s.setValue("opacity", m_opacityEffect->opacity());
+
     m_screenPercent = s.value("screen_percent", QPointF(0.5, 0.5)).toPointF();
 
     m_clock_face = new QSvgWidget(svg_path + clock_face_file, 0);
@@ -244,6 +273,7 @@ void AnalogClock::writeSettings()
     s.setValue("window_geometry", this->saveGeometry());
     s.setValue("screen_percent", m_screenPercent);
     s.setValue("show_second_hand", m_showSecondHand);
+    s.setValue("opacity", m_opacityEffect->opacity());
 }
 
 qreal degToRad(qreal deg){
