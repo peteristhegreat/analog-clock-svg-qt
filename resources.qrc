@@ -1,10 +1,16 @@
 <RCC>
     <qresource prefix="/">
-        <file>img/face.svg</file>
         <file>img/hour_hand.svg</file>
         <file>img/minute_hand.svg</file>
         <file>img/preview.svg</file>
         <file>img/second_hand.svg</file>
+        <file>img/dark-face.svg</file>
+        <file>img/dark-face_with_shadow.svg</file>
+        <file>img/dark-hour_hand.svg</file>
+        <file>img/dark-minute_hand.svg</file>
+        <file>img/dark-preview.svg</file>
+        <file>img/dark-second_hand.svg</file>
+        <file>img/face.svg</file>
         <file>img/face_with_shadow.svg</file>
     </qresource>
 </RCC>

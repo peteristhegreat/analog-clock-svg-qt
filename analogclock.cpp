@@ -117,6 +117,8 @@ void AnalogClock::showContextMenu(const QPoint &pos)
 //   contextMenu.addAction(&toggleFrameAction);
    contextMenu.addAction("Toggle Frame", this, SLOT(toggleFrame()));
 
+   contextMenu.addAction("Toggle Dark Mode", this, SLOT(toggleDarkMode()));
+
    QAction toggleSecondHand("Second Hand", this);
    toggleSecondHand.setCheckable(true);
    toggleSecondHand.setChecked(m_showSecondHand);
@@ -187,6 +189,19 @@ void AnalogClock::toggleFrame(){
     this->show();
 }
 
+void AnalogClock::toggleDarkMode()
+{
+    QSettings s;
+    QString svg_path = s.value("svg_path", ":/img/").toString();
+    if(svg_path.endsWith("dark-")){
+        svg_path = ":/img/";
+    } else {
+        svg_path = ":/img/dark-";
+    }
+    s.setValue("svg_path", svg_path);
+    readSettings();
+}
+
 void AnalogClock::setFrame(bool add_frame){
     if(add_frame){
         this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint);
@@ -233,7 +248,7 @@ void AnalogClock::moveEvent(QMoveEvent *event)
 void AnalogClock::readSettings()
 {
     QSettings s;
-    QString svg_path = s.value("svg_path", ":/img/").toString();
+    QString svg_path = s.value("svg_path", ":/img/dark-").toString();
     s.setValue("svg_path", svg_path);
 
     QString clock_face_file = s.value("clock_face", "face.svg").toString();

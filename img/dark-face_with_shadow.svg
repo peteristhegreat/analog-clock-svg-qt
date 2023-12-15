@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="face_with_shadow.svg">
+   sodipodi:docname="dark-face_with_shadow.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -30,7 +30,7 @@
      id="namedview3443"
      showgrid="false"
      inkscape:zoom="0.96102398"
-     inkscape:cx="151.73314"
+     inkscape:cx="218.72618"
      inkscape:cy="200"
      inkscape:window-x="25"
      inkscape:window-y="16"
@@ -151,6 +151,258 @@
        r="220.07776"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.95744681,0,0,0.95744681,16.774301,16.767683)" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4189">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4191" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4193" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4195">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4197" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4199" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4201">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4203" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4205" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4207">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4209" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4211" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4213">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4215" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4217" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4219">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4221" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4223" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4225">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4227" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4229" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4231">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4233" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4235" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4237">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4239" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4241" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4243">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4245" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4247" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4249">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4251" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4253" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4255">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4257" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4259" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4261">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4263" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4265" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4267">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4269" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4271" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4273">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4275" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4277" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4279">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4281" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4283" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4285">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4287" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4289" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4291">
+      <feColorMatrix
+         type="hueRotate"
+         values="180"
+         result="color1"
+         id="feColorMatrix4293" />
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         id="feColorMatrix4295" />
+    </filter>
   </defs>
   <metadata
      id="metadata7">
@@ -174,7 +426,7 @@
     </rdf:RDF>
   </metadata>
   <circle
-     style="fill:url(#radialGradient4285);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="fill:url(#radialGradient4285);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4189)"
      id="path3469"
      cx="228.48332"
      cy="228.3278"
@@ -184,10 +436,10 @@
      cy="220.00002"
      cx="220"
      id="circle8552"
-     style="opacity:1;fill:url(#linearGradient8565);fill-opacity:1;stroke:none;stroke-width:11.3493948;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:url(#linearGradient8565);fill-opacity:1;stroke:none;stroke-width:11.3493948;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter4195)" />
   <g
      id="text8280"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4201)"
      transform="translate(20,20)">
     <path
        id="path8427"
@@ -200,7 +452,7 @@
   </g>
   <g
      id="text8280-1"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4207)"
      transform="translate(20,20)">
     <path
        id="path8424"
@@ -208,13 +460,13 @@
        inkscape:connector-curvature="0" />
   </g>
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4213)"
      d="m 405.13555,220 c -7.73909,0 -15.47817,0 -23.21725,0 m 21.95525,19.40643 -11.42681,-1.366 m 8.00815,20.33704 -11.16042,-2.64743 m 5.71749,21.05067 -10.80943,-3.84426 m 3.47465,21.54729 -10.37387,-4.9565 m 1.27963,21.82692 -19.70741,-11.96833 m 8.98613,27.87374 -9.24898,-6.92725 m -2.96695,21.73524 -8.55965,-7.78574 m -5.01851,21.3639 -7.78574,-8.55965 m -7.02224,20.77557 -6.92725,-9.24897 m -8.97816,19.97025 -11.96833,-19.70741 m -4.9021,28.80165 -4.9565,-10.37387 m -12.74654,17.70865 -3.84426,-10.80943 m -14.55897,16.25236 -2.64743,-11.16042 m -16.32363,14.57908 -1.366,-11.42682 M 220,405.13551 c 0,-7.73908 0,-15.47816 0,-23.21725 m -19.40642,21.95526 1.366,-11.42681 m -20.33703,8.00816 2.64742,-11.16042 m -21.05068,5.71749 3.84426,-10.80944 m -21.54729,3.47465 4.95651,-10.37386 m -21.82693,1.27963 11.96834,-19.70741 m -27.87375,8.98612 6.92724,-9.24897 m -21.735227,-2.96695 7.785737,-8.55965 m -21.363891,-5.0185 8.559649,-7.78574 m -20.775581,-7.02226 9.248973,-6.92725 m -19.970253,-8.97815 19.707415,-11.96833 m -28.801649,-4.90209 10.373865,-4.95651 M 44.988054,276.78069 55.797488,272.93643 M 39.54513,258.37746 50.705548,255.73003 m -14.579078,-16.32361 11.426816,-1.366 M 34.864491,219.99999 c 7.739083,0 15.478166,0 23.217249,0 m -21.955268,-19.40643 11.426816,1.366 m -8.008155,-20.33703 11.160418,2.64742 m -5.717493,-21.05066 10.809434,3.84426 m -3.474644,-21.5473 10.373865,4.9565 m -1.27963,-21.82692 19.707414,11.96833 m -8.986133,-27.87374 9.248972,6.92725 m 2.96696,-21.73524 8.559649,7.78574 m 5.018506,-21.36389 7.785739,8.55964 m 7.02224,-20.775564 6.92725,9.248974 m 8.97817,-19.970264 11.96833,19.707414 m 4.90209,-28.801646 4.95651,10.373865 m 12.74652,-17.708647 3.84426,10.809434 m 14.559,-16.252362 2.64742,11.160418 m 16.32361,-14.579076 1.366,11.426816 m 18.04042,-12.688797 c 0,7.739083 0,15.478166 0,23.217249 m 19.40644,-21.955265 -1.366,11.426816 m 20.33704,-8.008156 -2.64743,11.160418 m 21.05066,-5.717494 -3.84426,10.809434 m 21.54729,-3.474653 -4.9565,10.373866 m 21.82694,-1.279623 -11.96834,19.707413 m 27.87374,-8.986133 -6.92725,9.248973 m 21.73523,2.96695 -7.78574,8.55965 m 21.36391,5.01851 -8.55965,7.78574 m 20.77557,7.02224 -9.24897,6.92725 m 19.97025,8.97816 -19.70741,11.96833 m 28.80165,4.9021 -10.37386,4.95651 m 17.70865,12.74652 -10.80944,3.84426 m 16.25236,14.55898 -11.16042,2.64742 m 14.57908,16.32363 -11.42681,1.366 M 405.13555,220 c -7.73909,0 -15.47817,0 -23.21725,0"
      id="path8264"
      inkscape:connector-curvature="0" />
   <g
      id="text8280-1-8"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4219)"
      transform="translate(20,20)">
     <path
        id="path8421"
@@ -222,13 +474,13 @@
        inkscape:connector-curvature="0" />
   </g>
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4225)"
      d="m 405.13555,220 c -7.73909,0 -15.47817,0 -23.21725,0 m -3.33536,91.35417 -19.70741,-11.96834 m -47.52136,79.19709 -11.96833,-19.70741 m -79.38583,46.26 c 0,-7.73908 0,-15.47817 0,-23.21725 m -91.35418,-3.33535 11.96834,-19.70741 M 61.41707,311.35414 81.124486,299.38582 M 34.864488,219.99999 c 7.739083,0 15.478166,0 23.217249,0 m 3.335354,-91.35418 19.707413,11.96834 M 128.64585,61.417068 140.61418,81.12448 m 79.38584,-46.259984 c 0,7.739083 0,15.478165 0,23.217248 m 91.35416,3.335332 -11.96833,19.707414 m 79.1971,47.52135 -19.70742,11.96833 M 405.13555,220 c -7.73909,0 -15.47817,0 -23.21725,0"
      id="path8264-1"
      inkscape:connector-curvature="0" />
   <g
      id="text8280-1-8-6"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4231)"
      transform="translate(20,20)">
     <path
        id="path8418"
@@ -237,7 +489,7 @@
   </g>
   <g
      id="text8280-1-8-4"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4237)"
      transform="translate(20,20)">
     <path
        id="path8415"
@@ -246,7 +498,7 @@
   </g>
   <g
      id="text8280-1-8-9"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4243)"
      transform="translate(20,20)">
     <path
        id="path8412"
@@ -255,7 +507,7 @@
   </g>
   <g
      id="text8280-1-8-98"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4249)"
      transform="translate(20,20)">
     <path
        id="path8409"
@@ -265,7 +517,7 @@
   <g
      id="g8554"
      transform="translate(20,20)"
-     style="fill-opacity:1;fill:none;stroke-width:15;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:0.48520711">
+     style="fill-opacity:1;fill:none;stroke-width:15;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:0.48520711;filter:url(#filter4255)">
     <circle
        r="194.3253"
        cy="200.00002"
@@ -275,7 +527,7 @@
   </g>
   <g
      id="text8280-1-8-5"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4261)"
      transform="translate(20,20)">
     <path
        id="path8406"
@@ -284,7 +536,7 @@
   </g>
   <g
      id="text8280-1-8-2"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4267)"
      transform="translate(20,20)">
     <path
        id="path8403"
@@ -293,7 +545,7 @@
   </g>
   <g
      id="text8280-1-8-67"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4273)"
      transform="translate(20,20)">
     <path
        id="path8442"
@@ -302,7 +554,7 @@
   </g>
   <g
      id="text8280-1-8-8"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4279)"
      transform="translate(20,20)">
     <path
        id="path8437"
@@ -315,7 +567,7 @@
   </g>
   <g
      id="text8280-1-8-24"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:50px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4285)"
      transform="translate(20,20)">
     <path
        id="path8432"
@@ -329,7 +581,7 @@
   <path
      id="clock-3-9-6"
      d="M 219.97602,31.173828 A 188.95972,188.95972 0 0 0 31.015446,220.1344 188.95972,188.95972 0 0 0 55.627138,312.91016 241.19989,241.19989 0 0 1 52.677679,276.53294 241.19989,241.19989 0 0 1 266.37908,37.203778 188.95972,188.95972 0 0 0 219.97602,31.173828 Z"
-     style="opacity:1;fill:#000000;fill-opacity:0.03831416;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:#000000;fill-opacity:0.03831416;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter4291)"
      inkscape:connector-curvature="0" />
   <desc
      id="desc3441">Created with Snap</desc>

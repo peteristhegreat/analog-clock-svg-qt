@@ -47,6 +47,7 @@ public slots:
     void handleScreenDisconnect(QScreen *);
     void onScreenResize(QRect);
     void toggleFrame();
+    void toggleDarkMode();
     void setFrame(bool add_frame);
     void showContextMenu(const QPoint &pos);
     void showAboutDialogue();
