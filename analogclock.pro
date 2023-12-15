@@ -12,3 +12,10 @@ INSTALLS += target
 
 RESOURCES += \
     resources.qrc
+
+RC_ICONS = clock.ico
+
+RC_FILE = myapp.rc
+
+DISTFILES += \
+    myapp.rc

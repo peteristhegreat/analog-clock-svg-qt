@@ -12,5 +12,6 @@
         <file>img/dark-second_hand.svg</file>
         <file>img/face.svg</file>
         <file>img/face_with_shadow.svg</file>
+        <file>img/clock.ico</file>
     </qresource>
 </RCC>
