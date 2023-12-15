@@ -48,6 +48,7 @@ public slots:
     void onScreenResize(QRect);
     void toggleFrame();
     void toggleDarkMode();
+    void toggleSmoothSecondHand();
     void setFrame(bool add_frame);
     void showContextMenu(const QPoint &pos);
     void showAboutDialogue();
@@ -75,6 +76,7 @@ private:
     QPointF m_screenPercent;
     bool m_showSecondHand;
     bool m_isDragging;
+    bool m_smooth;
     QGraphicsOpacityEffect * m_opacityEffect;
 };
 

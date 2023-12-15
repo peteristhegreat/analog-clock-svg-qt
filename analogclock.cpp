@@ -119,6 +119,8 @@ void AnalogClock::showContextMenu(const QPoint &pos)
 
    contextMenu.addAction("Toggle Dark Mode", this, SLOT(toggleDarkMode()));
 
+   contextMenu.addAction("Smooth Second Hand", this, SLOT(toggleSmoothSecondHand()));
+
    QAction toggleSecondHand("Second Hand", this);
    toggleSecondHand.setCheckable(true);
    toggleSecondHand.setChecked(m_showSecondHand);
@@ -202,6 +204,14 @@ void AnalogClock::toggleDarkMode()
     readSettings();
 }
 
+void AnalogClock::toggleSmoothSecondHand()
+{
+    QSettings s;
+    bool val = s.value("smooth_second_hand", true).toBool();
+    s.setValue("smooth_second_hand", !val);
+    readSettings();
+}
+
 void AnalogClock::setFrame(bool add_frame){
     if(add_frame){
         this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint);
@@ -279,6 +289,14 @@ void AnalogClock::readSettings()
     m_minute_hand = new QSvgWidget(svg_path + minute_hand_file, 0);
     m_hour_hand = new QSvgWidget(svg_path + hour_hand_file, 0);
 
+    m_smooth = s.value("smooth_second_hand").toBool();
+    if(m_smooth){
+        m_timer->start(1000/15);
+    }else{
+        m_timer->start(1000);
+    }
+
+    resize(200, 200);
     this->restoreGeometry(s.value("window_geometry").toByteArray());
 }
 
@@ -330,7 +348,11 @@ void AnalogClock::paintEvent(QPaintEvent *)
         // Draw the second hand
         painter.save();
         painter.translate(m_second_hand->width() / 2, m_second_hand->height() / 2);
-        painter.rotate(6.0 *time.second());
+        if (!m_smooth){
+            painter.rotate(6.0 *time.second());
+        }else{
+            painter.rotate(6.0 *((float)time.second()) + 6.0*((float)(time.msec())/1000.0));
+        }
 //        painter.scale(1, 1 + 2*aspect_ratio);
 //        painter.scale(qCos(degToRad(6.0*time.second())), qSin(degToRad(6.0*time.second())));
         painter.translate(-m_second_hand->width() / 2, -m_second_hand->height() / 2);
