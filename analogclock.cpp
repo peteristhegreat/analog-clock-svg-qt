@@ -201,6 +201,7 @@ void AnalogClock::toggleDarkMode()
         svg_path = ":/img/dark-";
     }
     s.setValue("svg_path", svg_path);
+    s.setValue("window_geometry", this->saveGeometry());
     readSettings();
 }
 
@@ -209,6 +210,7 @@ void AnalogClock::toggleSmoothSecondHand()
     QSettings s;
     bool val = s.value("smooth_second_hand", true).toBool();
     s.setValue("smooth_second_hand", !val);
+    s.setValue("window_geometry", this->saveGeometry());
     readSettings();
 }
 
